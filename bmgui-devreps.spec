@@ -1,6 +1,6 @@
 Name:           bmgui-devreps
 Version:        0.1
-Release:        0%{?dist} 
+Release:        1%{?dist} 
 Summary:        Sibek Balance Machine Development Metapackage
 
 Group:          Applications/System
@@ -32,7 +32,7 @@ Requires:	lua
 Requires:	tolua++-devel
 Requires:       tolua++
 Requires:       alsa-lib-devel
-
+Requires:       clanlib-devel
 
 %description
 For leasy SATAN Creature

@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        916%{?dist} 
+Release:        919%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
@@ -12,10 +12,11 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}%{release}-root-%(%{__id_u} -n)
 BuildArch:      x86_64
 
 Requires:       xinput_calibrator
-Requires:	bmgui-fw = 0.3-2.fc17
+Requires:	bmgui-fw = 0.3
 Requires:       xinput
 Requires:       roxterm
 Requires:	php-cli
+Requires:       clanlib
 
 %description
 Sibek Balance Machine GUI for KonsulM
