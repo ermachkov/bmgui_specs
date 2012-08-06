@@ -116,6 +116,12 @@ install -pm 644 data/fonts/main_menu.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/font
 install -pm 644 data/fonts/DS-DIGIB.TTF $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
 install -pm 644 data/fonts/main_screen.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
 install -pm 644 data/fonts/wqy-microhei.ttc $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
+install -pm 644 data/sounds/ru/diam_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/ofs_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/round_off.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/round_on.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/sizes_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/width_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/ruler.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/stop_key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/ruler_success.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
@@ -250,6 +256,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/fonts/DS-DIGIB.TTF
 %{_datadir}/%{name}/fonts/main_screen.xml
 %{_datadir}/%{name}/fonts/wqy-microhei.ttc
+%{_datadir}/%{name}/sounds/ru/diam_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/ofs_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/round_off.wav
+%{_datadir}/%{name}/sounds/ru/round_on.wav
+%{_datadir}/%{name}/sounds/ru/sizes_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/width_not_entered.wav
 %{_datadir}/%{name}/sounds/ru/ruler.wav
 %{_datadir}/%{name}/sounds/ru/stop_key.wav
 %{_datadir}/%{name}/sounds/ru/ruler_success.wav
