@@ -174,8 +174,9 @@ install -pm 644 data/i18n/ru.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/cn.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/main.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/
 install -pm 644 files/bmgui.png $RPM_BUILD_ROOT%{_datadir}/pixmaps/
-install -pm 644 files/bmgui.desktop $RPM_BUILD_ROOT%{_datadir}/applications
-install -pm 644 files/bminfo $RPM_BUILD_ROOT%{_sysconfdir}
+install -pm 644 files/bmgui.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
+install -pm 644 files/bminfo $RPM_BUILD_ROOT%{_sysconfdir}/
+install -pm 644 files/bmgui.xml $RPM_BUILD_ROOT%{_sysconfdir}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -325,4 +326,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir %{_sysconfdir}
 %{_sysconfdir}/bminfo
+%{_sysconfdir}/bmgui.xml
 
