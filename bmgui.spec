@@ -169,6 +169,25 @@ install -pm 644 data/sounds/ru/right_80.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/s
 install -pm 644 data/sounds/ru/right_85.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
 install -pm 644 data/sounds/ru/right_90.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
 install -pm 644 data/sounds/ru/right_95.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/accel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/alu_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/decel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/dynamic_balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/emergency_stop.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/measure.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/menu.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/num_spikes_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/options.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/safe_shutdown.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/shutdown.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/static_balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/steel_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/truck_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_1.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_1_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_2.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_2_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/wheel_is_balanced.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/i18n/en.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/ru.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/cn.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
@@ -310,6 +329,25 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sounds/ru/right_85.wav
 %{_datadir}/%{name}/sounds/ru/right_90.wav
 %{_datadir}/%{name}/sounds/ru/right_95.wav
+%{_datadir}/%{name}/sounds/ru/accel.wav
+%{_datadir}/%{name}/sounds/ru/alu_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/decel.wav
+%{_datadir}/%{name}/sounds/ru/dynamic_balance.wav
+%{_datadir}/%{name}/sounds/ru/emergency_stop.wav
+%{_datadir}/%{name}/sounds/ru/measure.wav
+%{_datadir}/%{name}/sounds/ru/menu.wav
+%{_datadir}/%{name}/sounds/ru/num_spikes_selected.wav
+%{_datadir}/%{name}/sounds/ru/options.wav
+%{_datadir}/%{name}/sounds/ru/safe_shutdown.wav
+%{_datadir}/%{name}/sounds/ru/shutdown.wav
+%{_datadir}/%{name}/sounds/ru/static_balance.wav
+%{_datadir}/%{name}/sounds/ru/steel_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/truck_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/user_1.wav
+%{_datadir}/%{name}/sounds/ru/user_1_selected.wav
+%{_datadir}/%{name}/sounds/ru/user_2.wav
+%{_datadir}/%{name}/sounds/ru/user_2_selected.wav
+%{_datadir}/%{name}/sounds/ru/wheel_is_balanced.wav
 %{_datadir}/%{name}/i18n/en.lua
 %{_datadir}/%{name}/i18n/ru.lua
 %{_datadir}/%{name}/i18n/cn.lua
