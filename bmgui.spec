@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        926%{?dist} 
+Release:        927%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
@@ -190,6 +190,11 @@ install -pm 644 data/sounds/ru/user_2_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{
 install -pm 644 data/sounds/ru/wheel_is_balanced.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/auto_rotation_left.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/auto_rotation_right.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_on.wav  $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_off.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/error.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/push_cover.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/overload.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/balance_1_weight.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/balance_2_weight.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
@@ -362,6 +367,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sounds/ru/balance_2_weight.wav
 %{_datadir}/%{name}/sounds/ru/calibration_display.wav
 %{_datadir}/%{name}/sounds/ru/calibration_wheel.wav
+%{_datadir}/%{name}/sounds/ru/auto_rotation_on.wav
+%{_datadir}/%{name}/sounds/ru/auto_rotation_off.wav
+%{_datadir}/%{name}/sounds/ru/error.wav
+%{_datadir}/%{name}/sounds/ru/push_cover.wav
+%{_datadir}/%{name}/sounds/ru/overload.wav
 %{_datadir}/%{name}/i18n/en.lua
 %{_datadir}/%{name}/i18n/ru.lua
 %{_datadir}/%{name}/i18n/cn.lua
