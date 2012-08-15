@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        927%{?dist} 
+Release:        928%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
@@ -200,6 +200,7 @@ install -pm 644 data/sounds/ru/balance_1_weight.wav $RPM_BUILD_ROOT%{_datadir}/%
 install -pm 644 data/sounds/ru/balance_2_weight.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/calibration_display.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/calibration_wheel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/recalc.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/i18n/en.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/ru.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/cn.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
@@ -372,6 +373,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sounds/ru/error.wav
 %{_datadir}/%{name}/sounds/ru/push_cover.wav
 %{_datadir}/%{name}/sounds/ru/overload.wav
+%{_datadir}/%{name}/sounds/ru/recalc.wav
 %{_datadir}/%{name}/i18n/en.lua
 %{_datadir}/%{name}/i18n/ru.lua
 %{_datadir}/%{name}/i18n/cn.lua
