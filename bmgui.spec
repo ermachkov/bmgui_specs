@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        929%{?dist} 
+Release:        930%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
@@ -91,6 +91,8 @@ install -pm 644 data/sprites/main_screen/misc.layers $RPM_BUILD_ROOT%{_datadir}/
 install -pm 644 data/sprites/main_screen/main_screen.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_screen/texture1.jpg $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_screen/message.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
+install -pm 644 data/sprites/main_screen/scream.jpg $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
+install -pm 644 data/sprites/main_screen/scream.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_menu/texture1.png $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
 install -pm 644 data/sprites/main_menu/oscilloscope.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
 install -pm 644 data/sprites/main_menu/stats.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
@@ -201,6 +203,7 @@ install -pm 644 data/sounds/ru/balance_2_weight.wav $RPM_BUILD_ROOT%{_datadir}/%
 install -pm 644 data/sounds/ru/calibration_display.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/calibration_wheel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/sounds/ru/recalc.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/scream.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/i18n/en.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/ru.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/cn.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
@@ -283,6 +286,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sprites/main_menu/texture5.png
 %{_datadir}/%{name}/sprites/main_menu/icons.layers
 %{_datadir}/%{name}/sprites/main_menu/texture1.jpg
+%{_datadir}/%{name}/sprites/main_screen/scream.jpg
+%{_datadir}/%{name}/sprites/main_screen/scream.xml
 %{_datadir}/%{name}/fonts/LiberationSans-Bold.ttf
 %{_datadir}/%{name}/fonts/LiberationSans-Regular.ttf
 %{_datadir}/%{name}/fonts/main_menu.xml
@@ -374,6 +379,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sounds/ru/push_cover.wav
 %{_datadir}/%{name}/sounds/ru/overload.wav
 %{_datadir}/%{name}/sounds/ru/recalc.wav
+%{_datadir}/%{name}/sounds/ru/scream.wav
 %{_datadir}/%{name}/i18n/en.lua
 %{_datadir}/%{name}/i18n/ru.lua
 %{_datadir}/%{name}/i18n/cn.lua
