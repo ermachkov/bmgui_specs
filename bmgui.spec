@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        923%{?dist} 
+Release:        932%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
@@ -37,6 +37,7 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/files
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen
@@ -55,6 +56,7 @@ install -pm 644 data/files/id_rsa $RPM_BUILD_ROOT%{_datadir}/%{name}/files/
 install -pm 644 data/scripts/wizard.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
 install -pm 644 data/scripts/balance_progress.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
 install -pm 644 data/scripts/common.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
+install -pm 644 data/scripts/sound.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
 install -pm 644 data/scripts/stats.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
 install -pm 644 data/scripts/start_screen.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
 install -pm 644 data/scripts/keyboard.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/scripts/
@@ -89,6 +91,8 @@ install -pm 644 data/sprites/main_screen/misc.layers $RPM_BUILD_ROOT%{_datadir}/
 install -pm 644 data/sprites/main_screen/main_screen.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_screen/texture1.jpg $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_screen/message.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
+install -pm 644 data/sprites/main_screen/scream.jpg $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
+install -pm 644 data/sprites/main_screen/scream.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_screen/
 install -pm 644 data/sprites/main_menu/texture1.png $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
 install -pm 644 data/sprites/main_menu/oscilloscope.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
 install -pm 644 data/sprites/main_menu/stats.layers $RPM_BUILD_ROOT%{_datadir}/%{name}/sprites/main_menu/
@@ -114,13 +118,92 @@ install -pm 644 data/fonts/main_menu.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/font
 install -pm 644 data/fonts/DS-DIGIB.TTF $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
 install -pm 644 data/fonts/main_screen.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
 install -pm 644 data/fonts/wqy-microhei.ttc $RPM_BUILD_ROOT%{_datadir}/%{name}/fonts/
-install -pm 644 data/sounds/ruler.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/stop_key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/ruler_success.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/balance_success.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/sounds.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
-install -pm 644 data/sounds/start_key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/
+install -pm 644 data/sounds/ru/diam_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/ofs_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/round_off.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/round_on.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/sizes_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/width_not_entered.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/ruler.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/stop_key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/ruler_success.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/balance_success.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/sounds.xml $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/start_key.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_10.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_100.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_15.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_20.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_25.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/left_30.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
+install -pm 644 data/sounds/ru/left_35.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/left_40.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/left_45.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/left_5.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/left_50.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/left_55.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/left_60.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/left_65.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/left_70.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/left_75.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
+install -pm 644 data/sounds/ru/left_80.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/       
+install -pm 644 data/sounds/ru/left_85.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/left_90.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/       
+install -pm 644 data/sounds/ru/left_95.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
+install -pm 644 data/sounds/ru/right_10.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/right_100.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/right_15.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/right_20.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/right_25.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/right_30.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_35.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/right_40.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_45.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_5.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_50.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_55.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_60.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/right_65.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_70.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/           
+install -pm 644 data/sounds/ru/right_75.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
+install -pm 644 data/sounds/ru/right_80.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/          
+install -pm 644 data/sounds/ru/right_85.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/         
+install -pm 644 data/sounds/ru/right_90.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/        
+install -pm 644 data/sounds/ru/right_95.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/accel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/alu_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/decel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/dynamic_balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/emergency_stop.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/measure.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/menu.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/num_spikes_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/options.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/safe_shutdown.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/shutdown.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/static_balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/steel_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/truck_disk_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_1.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_1_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_2.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/user_2_selected.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/wheel_is_balanced.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_left.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_right.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_on.wav  $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/auto_rotation_off.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/error.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/push_cover.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/overload.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/balance.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/balance_1_weight.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/balance_2_weight.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/calibration_display.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/calibration_wheel.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/recalc.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
+install -pm 644 data/sounds/ru/scream.wav $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds/ru/
 install -pm 644 data/i18n/en.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/ru.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
 install -pm 644 data/i18n/cn.lua $RPM_BUILD_ROOT%{_datadir}/%{name}/i18n/
@@ -158,6 +241,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/scripts/layout_menu.lua
 %{_datadir}/%{name}/scripts/message.lua
 %{_datadir}/%{name}/scripts/oscilloscope.lua
+%{_datadir}/%{name}/scripts/sound.lua
 %{_datadir}/%{name}/sprites/main_screen/texture1.png
 %{_datadir}/%{name}/sprites/main_screen/texture10.png
 %{_datadir}/%{name}/sprites/main_screen/texture8.png
@@ -202,19 +286,100 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/sprites/main_menu/texture5.png
 %{_datadir}/%{name}/sprites/main_menu/icons.layers
 %{_datadir}/%{name}/sprites/main_menu/texture1.jpg
+%{_datadir}/%{name}/sprites/main_screen/scream.jpg
+%{_datadir}/%{name}/sprites/main_screen/scream.xml
 %{_datadir}/%{name}/fonts/LiberationSans-Bold.ttf
 %{_datadir}/%{name}/fonts/LiberationSans-Regular.ttf
 %{_datadir}/%{name}/fonts/main_menu.xml
 %{_datadir}/%{name}/fonts/DS-DIGIB.TTF
 %{_datadir}/%{name}/fonts/main_screen.xml
 %{_datadir}/%{name}/fonts/wqy-microhei.ttc
-%{_datadir}/%{name}/sounds/ruler.wav
-%{_datadir}/%{name}/sounds/stop_key.wav
-%{_datadir}/%{name}/sounds/ruler_success.wav
-%{_datadir}/%{name}/sounds/balance_success.wav
-%{_datadir}/%{name}/sounds/key.wav
-%{_datadir}/%{name}/sounds/sounds.xml
-%{_datadir}/%{name}/sounds/start_key.wav
+%{_datadir}/%{name}/sounds/ru/diam_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/ofs_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/round_off.wav
+%{_datadir}/%{name}/sounds/ru/round_on.wav
+%{_datadir}/%{name}/sounds/ru/sizes_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/width_not_entered.wav
+%{_datadir}/%{name}/sounds/ru/ruler.wav
+%{_datadir}/%{name}/sounds/ru/stop_key.wav
+%{_datadir}/%{name}/sounds/ru/ruler_success.wav
+%{_datadir}/%{name}/sounds/ru/balance_success.wav
+%{_datadir}/%{name}/sounds/ru/key.wav
+%{_datadir}/%{name}/sounds/ru/sounds.xml
+%{_datadir}/%{name}/sounds/ru/start_key.wav
+%{_datadir}/%{name}/sounds/ru/left_10.wav
+%{_datadir}/%{name}/sounds/ru/left_100.wav
+%{_datadir}/%{name}/sounds/ru/left_15.wav
+%{_datadir}/%{name}/sounds/ru/left_20.wav
+%{_datadir}/%{name}/sounds/ru/left_25.wav
+%{_datadir}/%{name}/sounds/ru/left_30.wav
+%{_datadir}/%{name}/sounds/ru/left_35.wav
+%{_datadir}/%{name}/sounds/ru/left_40.wav
+%{_datadir}/%{name}/sounds/ru/left_45.wav
+%{_datadir}/%{name}/sounds/ru/left_5.wav 
+%{_datadir}/%{name}/sounds/ru/left_50.wav
+%{_datadir}/%{name}/sounds/ru/left_55.wav
+%{_datadir}/%{name}/sounds/ru/left_60.wav
+%{_datadir}/%{name}/sounds/ru/left_65.wav
+%{_datadir}/%{name}/sounds/ru/left_70.wav
+%{_datadir}/%{name}/sounds/ru/left_75.wav
+%{_datadir}/%{name}/sounds/ru/left_80.wav
+%{_datadir}/%{name}/sounds/ru/left_85.wav
+%{_datadir}/%{name}/sounds/ru/left_90.wav
+%{_datadir}/%{name}/sounds/ru/left_95.wav
+%{_datadir}/%{name}/sounds/ru/right_10.wav
+%{_datadir}/%{name}/sounds/ru/right_100.wav
+%{_datadir}/%{name}/sounds/ru/right_15.wav
+%{_datadir}/%{name}/sounds/ru/right_20.wav
+%{_datadir}/%{name}/sounds/ru/right_25.wav
+%{_datadir}/%{name}/sounds/ru/right_30.wav
+%{_datadir}/%{name}/sounds/ru/right_35.wav
+%{_datadir}/%{name}/sounds/ru/right_40.wav
+%{_datadir}/%{name}/sounds/ru/right_45.wav
+%{_datadir}/%{name}/sounds/ru/right_5.wav 
+%{_datadir}/%{name}/sounds/ru/right_50.wav
+%{_datadir}/%{name}/sounds/ru/right_55.wav
+%{_datadir}/%{name}/sounds/ru/right_60.wav
+%{_datadir}/%{name}/sounds/ru/right_65.wav
+%{_datadir}/%{name}/sounds/ru/right_70.wav
+%{_datadir}/%{name}/sounds/ru/right_75.wav
+%{_datadir}/%{name}/sounds/ru/right_80.wav
+%{_datadir}/%{name}/sounds/ru/right_85.wav
+%{_datadir}/%{name}/sounds/ru/right_90.wav
+%{_datadir}/%{name}/sounds/ru/right_95.wav
+%{_datadir}/%{name}/sounds/ru/accel.wav
+%{_datadir}/%{name}/sounds/ru/alu_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/decel.wav
+%{_datadir}/%{name}/sounds/ru/dynamic_balance.wav
+%{_datadir}/%{name}/sounds/ru/emergency_stop.wav
+%{_datadir}/%{name}/sounds/ru/measure.wav
+%{_datadir}/%{name}/sounds/ru/menu.wav
+%{_datadir}/%{name}/sounds/ru/num_spikes_selected.wav
+%{_datadir}/%{name}/sounds/ru/options.wav
+%{_datadir}/%{name}/sounds/ru/safe_shutdown.wav
+%{_datadir}/%{name}/sounds/ru/shutdown.wav
+%{_datadir}/%{name}/sounds/ru/static_balance.wav
+%{_datadir}/%{name}/sounds/ru/steel_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/truck_disk_selected.wav
+%{_datadir}/%{name}/sounds/ru/user_1.wav
+%{_datadir}/%{name}/sounds/ru/user_1_selected.wav
+%{_datadir}/%{name}/sounds/ru/user_2.wav
+%{_datadir}/%{name}/sounds/ru/user_2_selected.wav
+%{_datadir}/%{name}/sounds/ru/wheel_is_balanced.wav
+%{_datadir}/%{name}/sounds/ru/auto_rotation_left.wav 
+%{_datadir}/%{name}/sounds/ru/auto_rotation_right.wav
+%{_datadir}/%{name}/sounds/ru/balance.wav
+%{_datadir}/%{name}/sounds/ru/balance_1_weight.wav
+%{_datadir}/%{name}/sounds/ru/balance_2_weight.wav
+%{_datadir}/%{name}/sounds/ru/calibration_display.wav
+%{_datadir}/%{name}/sounds/ru/calibration_wheel.wav
+%{_datadir}/%{name}/sounds/ru/auto_rotation_on.wav
+%{_datadir}/%{name}/sounds/ru/auto_rotation_off.wav
+%{_datadir}/%{name}/sounds/ru/error.wav
+%{_datadir}/%{name}/sounds/ru/push_cover.wav
+%{_datadir}/%{name}/sounds/ru/overload.wav
+%{_datadir}/%{name}/sounds/ru/recalc.wav
+%{_datadir}/%{name}/sounds/ru/scream.wav
 %{_datadir}/%{name}/i18n/en.lua
 %{_datadir}/%{name}/i18n/ru.lua
 %{_datadir}/%{name}/i18n/cn.lua
