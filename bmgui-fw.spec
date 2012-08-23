@@ -1,5 +1,5 @@
 Name:           bmgui-fw
-%define pversion 5
+%define pversion 6
 Version:        0.3
 Release:        %{pversion}%{?dist} 
 Summary:        Sibek Balance Machine Firmware
