@@ -49,6 +49,7 @@ install -pm 755 bmgui $RPM_BUILD_ROOT%{_bindir}/
 install -pm 755 files/bmgui_xinput_calibrator $RPM_BUILD_ROOT%{_bindir}/
 install -pm 755 bmgui_start $RPM_BUILD_ROOT%{_bindir}/
 install -pm 755 files/bmgui_update $RPM_BUILD_ROOT%{_bindir}/
+install -pm 755 files/bmgui_update_fw $RPM_BUILD_ROOT%{_bindir}/
 install -pm 755 files/bmgui_get_ini $RPM_BUILD_ROOT%{_bindir}/
 install -pm 755 files/bmgui_push_file $RPM_BUILD_ROOT%{_bindir}/
 
@@ -223,6 +224,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/bmgui_xinput_calibrator
 %{_bindir}/bmgui_start
 %{_bindir}/bmgui_update
+%{_bindir}/bmgui_update_fw
 %{_bindir}/bmgui_get_ini
 %{_bindir}/bmgui_push_file
 
