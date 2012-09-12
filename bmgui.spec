@@ -1,6 +1,6 @@
 Name:           bmgui
 Version:        0.1
-Release:        936%{?dist} 
+Release:        937%{?dist} 
 Summary:        Sibek Balance Machine GUI
 
 Group:          Applications/System
